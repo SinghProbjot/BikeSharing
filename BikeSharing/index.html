@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Title -->
+    <title>Bike Sharing Project 0.1</title>
+    <!-- Favicon -->
+    <!--[if IE]><link rel="shortcut icon" href="favicon.ico"><![endif]-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.gif" type="image/gif" />
+    <link rel="apple-touch-icon-precomposed" href="favicon.gif">
+    
+<!-- JavaScript -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://kit.fontawesome.com/e2e6594b13.js" crossorigin="anonymous"></script>
+  
+  </head>
+  <body style="background-color: black;">
+      <!-- NavigationBar Start -->
+      <nav class="navbar navbar-expand-md navbar-dark mynavbar"  style="background-color:rgba(0, 0, 0, 0.75);" data-nav-status="toggle"> 
+        <div class="container pt-2">
+          <a class="navbar-brand text-success" href="#Top">BikeSharing</a>
+
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="navbar-collapse collapse justify-content-md-end" id="navbar">
+            <div class="text-center">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link " href="#About">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-success download" href="#Download">Download App</a>
+              </li>
+            </ul>
+            </div>
+          </div>
+        </div>      
+      </nav>
+   <!-- NavigationBar End --> 
+    <main>
+      <!-- Page Start -->
+
+      <!-- Home Start -->
+      <section class="container full" id="Home" style="margin-top: 10%;margin-bottom: -25%;">
+        <div class="pt-5 mt-5 d-flex align-items-center">
+          <img class="img-fluid position-relative mx-auto"src="img/bike.gif">
+          <div id="text-title">
+            <p class="display-4 text-white text-responsive"><strong>Let's Ride!</strong></p>
+          </div>
+        </div>
+        <div id="arrow">
+          <a class="" href="#About"><img class="img-fluid" width="4%" src="img/arrow.png"></a>
+        </div>
+        
+      </section>
+      <!-- Home End -->
+
+      <!-- About Start -->
+      <section id="About" class="full" style="background-color: white;">
+        <div class="container">
+          <div class="" style="margin-top: 25%;">
+            <div class="container text-center">
+              <p class="text-success text-center m-5 p-5"><strong>ABOUT</strong></p>
+            </div>
+            <div class="col-md-7 pb-2"> 
+              <h1 class="text-center"><small><strong>SMART MOBILITY FOR THE MODERN WORLD</strong></small></h1> 
+              <p class="text-center">BikeSharing is founded on a simple idea that all communities deserve access to smart, affordable mobility.</p>
+              <p class="text-center">Through the equitable distribution of shared bikes, we aim to reduce dependence on personal automobiles for short distance transportation and leave future generations with a cleaner, healthier planet.</p>
+            </div>
+            <hr class="my-5">
+            <div class="offset-md-5 col-md-7 py-2">
+              <h1 class="text-center "><small><strong>WHAT MOVES YOU</strong></small></h1> 
+              <p class="text-center">BikeSharing connects riders to the people and places that matter most, bringing cities together and empowering better urban living.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About End -->
+
+      <!-- We Start -->
+      <section id="We" class="full">
+        <div class="container justify-content-center d-flex full">
+          <div class="row align-self-center">
+            <h1 class="display-4 text-white text-center" style="font-size: calc(1rem + 2.0vw);"><strong>We believe that city life is a beautiful life.</strong></h1>
+          </div>
+        </div>
+      </section>
+      <!-- We End -->
+
+      <!-- Locations Start -->
+      <section id="Locations" class="full" style="background-color: white;">
+        <div class="container py-5">
+          <h1 class="display-4 text-black text-center"><strong>Locations</strong></h1>
+          <div class="row text-center p-5">
+            <div id='map' class="mx-auto" style="min-height: 250px;min-width: 45%; width: fit-content;"></div>
+              <div class="col-md-6 p-5">
+                <h1 id="" class="pl-3 pb-3 display-4 text-break"><strong id="name">Select a station from the map!</strong></h1>
+                <p id="description"class="p-3"></p>
+                <label id="numLabel"class="pl-3"></label>
+                <span id="num"></span>
+              </div>
+          </div>
+        </div>   
+      </section>
+      <!-- Locations End -->
+
+      <!-- HowTo Start -->
+      <section id="HowTo" class="container d-flex-inline d-none d-sm-block flex-nowrap full"style="margin-bottom: 10rem;">
+        <p class="text-success text-center m-3 p-3"><strong>HOW TO BIKESHARING</strong></p>
+        <div class="col-6 offset-3">
+          <h1 class="display-4 text-white text-center"><strong>Simple, accessible micromobility for all.</strong></h1>
+          <hr>
+        </div>
+
+        <div class="row py-5 my-5">
+          <div class="col-4 py-5 my-5">
+            <div class="row py-4 active" id="Locate" style="cursor: pointer;">
+              <span class="pulse"></span><h3 class="text-white"><span>Locate</span></h3>
+            </div>
+            <div class="separator"></div>
+            <div class="row py-4" id="Scan" style="cursor: pointer;">
+              <span class="pulse"></span><h3 class="text-white"><span>Scan</span></h3>
+            </div>
+            <div class="separator"></div>
+            <div class="row py-4" id="Ride" style="cursor: pointer;">
+              <span class="pulse"></span><h3 class="text-white"><span>Ride</span></h3>
+            </div>
+
+          </div>
+          <div class="col-4">
+            <img id="iPhone" class="iphone" src="img/iphone.png">
+            <img src="img/iphone1.jpg" id="bg-iphone" class="iphone" style="top: 2%;">   
+          </div>
+          <div class="col-4 pl-5 align-self-center">
+            <p id="txtContainer" class="text-break">
+              <a class="text-success"><strong>Download the BikeSharing app </strong></a>
+              <span class="text-white"><strong>to discover your nearest available bike.</strong></span>
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- HowTo End -->
+
+      <!-- OurBikes Start -->
+      <section id="OurBikes" class="full" style="background-color: white;">
+        <p class="text-success text-center m-3 mt-5 pt-5 p-3"><strong>OUR BIKES</strong></p>
+        <div class="col-6 offset-3">
+          <h1 class="display-4 text-black text-break text-center"><strong>Sustainable - spanning countries & communities.</strong></h1>
+        </div>
+        <div class="container text-center my-5">
+            <a href=""><img class="img-fluid col-md-6 my-5 inline-flex zoom" src="img/bike.gif"></a>
+        </div>    
+      </section>
+      <!--OurBikes End -->
+    </main>
+
+    <!-- Footer Start-->
+    <footer class="mt-5">
+
+      <!-- FirstColumn Start -->
+      <div class="container text-center text-md-left mt-5">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="text-white"><strong>BIKESHARING</strong></h6>
+            <hr class="accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p  class="text-white">Let's join us!</p>
+            <div>
+              <div>
+                <span>
+                  <a href="https://itunes.apple.com/it/">
+                    <img src="http://images.ctfassets.net/f107dq97zt0a/2q2VcEdyxqRN3G8debkjEU/f1a4d166ebec459832a1f4b5bb305066/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg">
+                  </a>
+                </span>
+              </div>
+              <div class="my-3">
+                <span>
+                  <a href="https://play.google.com/store/apps/">
+                    <img src="http://images.ctfassets.net/f107dq97zt0a/4lsQl3qGCfgjb4WySL788C/d0f8d7a769056bf0d5c9b589b476526d/google-play-badge-US.svg" width="50%">
+                  </a>
+                </span>
+              </div>
+            </div>
+            <p class="text-white"><small>Locate, Scan, Ride!</small></p>
+          </div>
+          <!-- FirstColumn End -->
+
+          <!-- Sections Start -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-white"><strong>SECTIONS</strong></h6>
+            <hr class="accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p><a href="#About" class=" text-white">About</a></p>
+            <p><a href="#Locations" class=" text-white">Locations</a></p>
+            <p><a href="#HowTo" class=" text-white">How To</a></p>
+            <p><a href="#OurBikes" class=" text-white">Our Bikes</a></p>
+          </div>
+          <!-- Sections End -->
+
+          <!-- Links Start -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase text-white"><strong>Useful links</strong></h6>
+            <hr class="accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p><a class=" text-white download"  href="#!">Download App</a></p>
+            <p class="--wrap"><a class=" text-white" href="https://paypal.me/pools/c/8kEqzKJgC1">Donate</a></p>
+            <p><a class=" text-white" href="pricing.html">Prices</a></p>
+            <p><a class=" text-white" href="help.html">Help</a></p>
+          </div>
+          <!-- Links End -->
+
+          <!-- Contact Start -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-white"><strong>CONTACT</strong></h6>
+            <hr class="accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p><a href="https://goo.gl/maps/7naX9e6subo7HPPj7" class=" text-white"><i class="fas fa-home mr-3"></i> Seriate, BG 24068, IT</a></p>
+            <p><a href="mailto:info@bikesharing.it" class=" text-white"><i class="fas fa-envelope mr-3"></i> info@bikesharing.it</a></p>
+            <p><a href="tel:+39035000000" class=" text-white"><i class="fas fa-phone mr-3"></i> + 39 035 000 000</a></p>
+            <p><a href="fax:+39035000001" class=" text-white"><i class="fas fa-print mr-3"></i> + 39 035 000 001</a></p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <!-- Contact End -->
+
+        <!-- Social Start -->
+        <div class="container mt-5">
+          <div class="row py-4 d-flex align-items-center">
+            <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+              <h6 class="mb-0 text-white">Get connected with us on social networks!</h6>
+            </div>
+            <div class="col-md-6 col-lg-7 text-center text-md-right">
+              <a class="fb-ic" href="http://www.facebook.com/"><i class="fab fa-facebook-f text-white mr-4"> </i></a>
+              <a class="tw-ic" href="http://www.twitter.com/"><i class="fab fa-twitter text-white mr-4"> </i></a>
+              <a class="li-ic" href="http://www.linkedin.com/"><i class="fab fa-linkedin-in text-white mr-4"> </i></a>
+              <a class="ins-ic"href="http://www.instagram.com/"><i class="fab fa-instagram text-white"> </i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Social End -->
+      </div>  
+    </footer>
+    <!-- Footer End-->
+
+    <!--  JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
